@@ -8,6 +8,14 @@ const routes:Routes=[
       loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)
     },
     {
+      path:'productos',
+      loadChildren:()=>import('./productos/productos.module').then(m=>m.ProductosModule)
+    },
+    {
+      path:'clientes',
+      loadChildren:()=>import('./clientes/clientes.module').then(m=>m.ClientesModule)
+    },
+    {
       path:'**',
       redirectTo:'auth'
     }
