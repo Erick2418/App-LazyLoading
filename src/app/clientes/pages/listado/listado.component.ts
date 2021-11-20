@@ -10,14 +10,27 @@ import { ClientesService } from '../../Services/clientes.service';
 })
 export class ListadoComponent implements OnInit {
 
-  clientes:Cliente[]=[];
+  public clientes:Cliente[]=[];
+  public page:number=0;
   constructor(private service:ClientesService) { }
 
   ngOnInit(): void {
     this.service.getPersonas()
     .subscribe(data=>{
         this.clientes=data;
-        console.log(this.clientes);
+        
     })
   }
+
+  nextPage(){
+    this.page += 5;
+  }
+  previewPage(){
+
+    if(this.page >0){
+      this.page-=5;
+    }
+
+  }
+
 }

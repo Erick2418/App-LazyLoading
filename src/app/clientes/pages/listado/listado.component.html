@@ -1,20 +1,44 @@
 <br><br>
 <div class="container">
+  <button [ngStyle]="{ 'width': '100px' }" 
+          class="btn btn-primary"
+          (click)="previewPage()" >
+          Preview
+  </button>
+  &nbsp;&nbsp;
+  <button [ngStyle]="{ 'width': '100px' }" 
+          class="btn btn-primary"
+          (click)="nextPage()" >
+          Next
+  </button>
+  
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th [ngStyle]="{ 'width': '50px' } " scope="col">Nombre</th>
+            <th [ngStyle]="{ 'width': '50px' } " scope="col">Correo</th>
+            <th [ngStyle]="{ 'width': '50px' } " scope="col">Pais</th>
+            <th [ngStyle]="{ 'width': '550px' } " scope="col">Acciones</th>
+            
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr *ngFor="let cliente of clientes | filtro:page">
+            
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.correo }}</td>
+            <td>{{ cliente.pais }}</td>
+            <td>
+              <button class="btn btn-primary">
+                Edit
+              </button>
+              &nbsp;
+              <button class="btn btn-danger">
+                Delete
+              </button>
+              
+            </td>
+            
           </tr>
         
         </tbody>

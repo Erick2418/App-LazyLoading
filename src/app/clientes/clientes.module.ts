@@ -7,12 +7,14 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import {HttpClientModule} from '@angular/common/http'; //ESTO
 import { ClientesService } from './Services/clientes.service';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
     AgregarComponent,
     ListadoComponent,
-    ClienteComponent
+    ClienteComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,
