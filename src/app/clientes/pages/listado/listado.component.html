@@ -1,14 +1,26 @@
 <br><br>
 <div class="container">
+  <h1>Lista de Clientes</h1>
+<br>
+  <input type="text"
+          class="form-control"
+          placeholder="Buscar cliente"
+          #txtSearch
+          (keyup)="keysearchCliente(txtSearch.value)"
+          
+          >
+<br>
   <button [ngStyle]="{ 'width': '100px' }" 
           class="btn btn-primary"
-          (click)="previewPage()" >
+          (click)="previewPage()" 
+          >
           Preview
   </button>
   &nbsp;&nbsp;
   <button [ngStyle]="{ 'width': '100px' }" 
           class="btn btn-primary"
-          (click)="nextPage()" >
+          (click)="nextPage()" 
+          [disabled]="(clientes | filtro:page:search).length === 0 ">
           Next
   </button>
   
@@ -23,7 +35,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of clientes | filtro:page">
+          <tr *ngFor="let cliente of clientes | filtro:page:search">
             
             <td>{{ cliente.nombre }}</td>
             <td>{{ cliente.correo }}</td>

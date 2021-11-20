@@ -12,6 +12,7 @@ export class ListadoComponent implements OnInit {
 
   public clientes:Cliente[]=[];
   public page:number=0;
+  public search:string="";
   constructor(private service:ClientesService) { }
 
   ngOnInit(): void {
@@ -32,5 +33,8 @@ export class ListadoComponent implements OnInit {
     }
 
   }
-
+  keysearchCliente( search:string){// cada que se precione una tecla se llamara esta funcion
+    this.page=0;
+    this.search=search;
+  }
 }
