@@ -11,12 +11,14 @@ import { FiltroPipe } from './pipes/filtro.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LoginGuardian} from './../auth/login-guardian.service'
 import { AuthService } from '../auth/Services/auth.service';
+import { EditComponent } from './pages/edit/edit.component';
 @NgModule({
   declarations: [
     AgregarComponent,
     ListadoComponent,
     ClienteComponent,
-    FiltroPipe
+    FiltroPipe,
+    EditComponent
   ],
   imports: [
     CommonModule,
