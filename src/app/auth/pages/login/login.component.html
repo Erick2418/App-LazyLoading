@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container mt-4" style="max-width: 675px ">
+<br>
+    <form [formGroup]="form"  (ngSubmit)="auth($event)">
+
+
+        <!-- ********* INPUT Correo ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Correo:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="email" formControlName="correo" class="form-control"  >
+                <span *ngIf=" this.form.get('correo')?.errors && this.form.get('correo')?.touched"  class="badge bg-danger">
+                        Debe ingresar un valor valido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT PASSWORD ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="password" formControlName="password" class="form-control" >
+                <span *ngIf=" this.form.get('password')?.errors && this.form.get('password')?.touched"  class="badge bg-danger">
+                    <div *ngIf="this.form.get('password')?.hasError('required')">
+                        Debe ingresar un valor
+                   </div>
+                   <div *ngIf="this.form.get('password')?.hasError('maxlength') || this.form.get('password')?.hasError('minlength')  ">
+                   Debe ingresar minimo 5 caracteres 
+                    </div>
+                    
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* BTN SUBMIT ********** -->
+        <button type="submit" [disabled]="form.invalid || disablebtn" class="btn btn-primary">Iniciar Session</button> 
+    </form>
+<br><br><br>
+
+</div>

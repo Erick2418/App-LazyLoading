@@ -10,7 +10,7 @@ export class ClientesService {
 
   constructor(private http:HttpClient) { }
 
-  Url= 'http://localhost:8080/api/';
+  private Url= 'http://localhost:8080/api/';
   getClientes():Observable<Cliente[]> { 
     return this.http.get<Cliente[]>(this.Url+"clientes");
   }
