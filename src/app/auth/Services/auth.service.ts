@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Cliente } from 'src/app/clientes/Interface/Cliente';
 
 @Injectable({
@@ -13,5 +14,8 @@ export class AuthService {
   login(cliente:Cliente){
     return this.http.post(this.Url+"login",cliente);
   }
+  loggedIn():boolean{
+    return !!localStorage.getItem('token');
 
+  }
 }

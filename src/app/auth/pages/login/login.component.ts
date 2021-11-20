@@ -32,11 +32,14 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       const clienteData:Cliente = this.form.value;  
       this.service.login(clienteData).subscribe(data=>{
-        console.log(data);
+        let token = JSON.parse(JSON.stringify(data));
+        localStorage.setItem('token',token.data);
+
         Swal.fire({
           icon: 'success',
           title: 'Bienvenido'
         })
+
         this.router.navigate(["listar"]);
       }, error=>{
         console.log(error);

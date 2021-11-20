@@ -9,7 +9,8 @@ import {HttpClientModule} from '@angular/common/http'; //ESTO
 import { ClientesService } from './Services/clientes.service';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {LoginGuardian} from './../auth/login-guardian.service'
+import { AuthService } from '../auth/Services/auth.service';
 @NgModule({
   declarations: [
     AgregarComponent,
@@ -24,6 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule //para los forms
   ],
-  providers: [ClientesService], //ESTO
+  providers: [ClientesService,LoginGuardian,AuthService], //ESTO
 })
 export class ClientesModule { }
