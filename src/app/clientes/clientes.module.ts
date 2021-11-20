@@ -8,6 +8,7 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
 import {HttpClientModule} from '@angular/common/http'; //ESTO
 import { ClientesService } from './Services/clientes.service';
 import { FiltroPipe } from './pipes/filtro.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { FiltroPipe } from './pipes/filtro.pipe';
   imports: [
     CommonModule,
     ClientesRoutingModule,
-    HttpClientModule  //ESTO
+    HttpClientModule,  //ESTO
+    FormsModule,
+    ReactiveFormsModule //para los forms
   ],
   providers: [ClientesService], //ESTO
 })

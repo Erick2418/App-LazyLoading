@@ -16,7 +16,7 @@ export class ListadoComponent implements OnInit {
   constructor(private service:ClientesService) { }
 
   ngOnInit(): void {
-    this.service.getPersonas()
+    this.service.getClientes()
     .subscribe(data=>{
         this.clientes=data;
         

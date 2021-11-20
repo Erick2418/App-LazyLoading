@@ -1,6 +1,6 @@
 
 export interface Cliente {
-    id: string,
+    id: number,
     cedula: string,   
     correo: string,
     password: string,
@@ -10,5 +10,5 @@ export interface Cliente {
     direccion: string,
     telefono: string,
     obserbaciones: string,
-    status: string,
+    status: boolean,
 }
