@@ -9,14 +9,15 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { LoginGuardian } from '../auth/login-guardian.service';
 import { AuthService } from '../auth/Services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import {UppercasePipe} from './../pipes/uppercase.pipe'
 
 @NgModule({
   declarations: [
     AgregarComponent,
     ListadoComponent,
     ProductoComponent,
-    EditarComponent
+    EditarComponent,
+    UppercasePipe
   ],
   imports: [
     CommonModule,

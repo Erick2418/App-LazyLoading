@@ -1,1 +1,42 @@
-<p>listado productos!</p>
+<div class="container">
+
+<h1>Lista de productos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Acciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listProducts | uppercasepipe;">
+                <th scope="col">{{product.id}}</th>
+                <th scope="col">{{product.nombre}}</th>
+                <th scope="col">{{product.precio}}</th>
+                <th scope="col">{{product.descripcion}}</th>
+                <th scope="col"><img class="img-fluid" style="max-width: 150px;" [src]="product.img  || './../../../../assets/notimg.png'" alt="dorito"></th>
+                <th scope="col">
+                    <button class="btn btn-primary">
+                        Editar
+                    </button> &nbsp;
+                    <button class="btn btn-danger">
+                        Eliminar
+                    </button>
+                    
+                </th>
+          
+            </tr>
+           
+        </tbody>
+    </table>
+
+
+
+
+</div>
