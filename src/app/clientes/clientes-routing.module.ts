@@ -11,9 +11,9 @@ const routes: Routes = [
     path:'',
     children:[
       { path:'agregar',canActivate:[LoginGuardian],component:AgregarComponent },
-      { path:'listado', component: ListadoComponent },
-      { path:'cliente', component: ClienteComponent },
-      { path:'edit/:id', component: EditComponent   },
+      { path:'listado',canActivate:[LoginGuardian], component: ListadoComponent },
+      { path:'cliente',canActivate:[LoginGuardian], component: ClienteComponent },
+      { path:'edit/:id',canActivate:[LoginGuardian], component: EditComponent   },
       { path:'**', redirectTo:'listado' },
       
       

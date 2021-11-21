@@ -31,7 +31,7 @@ export class AppComponent {
     //   this.router.navigate(["clientes/listado"]);
     //   return ;
     // }
-    this.router.navigate(["/auth/login"]);
+    // this.router.navigate(["/auth/login"]);
     // return;
   }
 }

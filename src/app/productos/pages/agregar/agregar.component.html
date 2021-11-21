@@ -1,1 +1,43 @@
-<p>agregar productos!</p>
+<br><br><br>
+<div class="col-lg-4 mx-auto">
+
+    <div class="card">
+        <div class="car-header">
+            Upload a photo
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Titulo Photo" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Titulo Photo" required>
+                </div>
+                <!-- d-none es display none xd -->
+                <input type="file" class="d-none" (change)="onChange($event)" #photoinput >
+                <img class="img-fluid" [src]="photoSelected ||  './../../../../assets/notimg.png'" alt="select" (click)="photoinput.click()" >
+            </form>
+
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+<h1> Show IMG Base64 </h1>
+<div class="card">
+    <div class="card-header">
+        <h1>IMG</h1>
+        <div class="card-img">
+            <img style="width: 200px;" class="img-fluid" [src]=" myImgesB64 || './../../../../assets/notimg.png'" alt="">
+        </div>
+    </div>
+    <div class="card-body">
+        <div>{{imgB64Text}}</div>
+
+    </div>
+</div>
+
+
+
+<br><br><br><br><br>
+
