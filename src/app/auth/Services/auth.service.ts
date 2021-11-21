@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter } from '@angular/core';
 
 import { Cliente } from 'src/app/clientes/Interface/Cliente';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,5 @@ export class AuthService {
   }
   loggedIn():boolean{
     return !!localStorage.getItem('token');
-
   }
 }

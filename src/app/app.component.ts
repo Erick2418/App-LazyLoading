@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -9,29 +7,34 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent {
   title = 'applazyloadform';
-
-  constructor(private router: Router){
-
-  }
-
-  ngOnInit(): void {
-    this.login();
-  }
-  logout(){
-    localStorage.removeItem('token');
-    Swal.fire({
-      icon: 'success',
-      title: 'Session Terminada'
-    })
-  }
-  login(){
+  userName:string=''; 
+  constructor(){
     
-    // if(localStorage.getItem('token')){
-   
-    //   this.router.navigate(["clientes/listado"]);
-    //   return ;
-    // }
-    // this.router.navigate(["/auth/login"]);
-    // return;
   }
+  
+  ngOnInit(): void {
+   
+  
+
+  }
+
+  // logout(){
+  //   if(localStorage.getItem('token')){
+
+  //     localStorage.removeItem('token');
+  //     this.router.navigate(["auth/login"]);
+  //     Swal.fire({
+  //       icon: 'success',
+  //       title: 'Session Terminada'
+  //     })
+
+  //   }
+  // }
+  // login(){
+  //   if(!localStorage.getItem('token')){
+  //     this.router.navigate(["clientes/listado"]);
+  //     return ;
+  //   }
+  // }
+  
 }

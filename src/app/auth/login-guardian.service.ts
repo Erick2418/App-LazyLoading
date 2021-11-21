@@ -12,9 +12,9 @@ constructor ( private autService: AuthService,
                 return true;
             }
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text:  "antes debes iniciar session",
+                icon: 'warning',
+                text:  "Inicia Session",
+                // showConfirmButton: false,
               })
             this.router.navigate(['/auth/login'])
             return false;

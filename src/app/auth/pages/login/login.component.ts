@@ -22,8 +22,11 @@ export class LoginComponent implements OnInit {
     });
 
   }
-
+  
   ngOnInit(): void {
+
+    
+
   }
   
   auth(event: Event) {
@@ -32,9 +35,11 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       const clienteData:Cliente = this.form.value;  
       this.service.login(clienteData).subscribe(data=>{
-        let token = JSON.parse(JSON.stringify(data));
-        localStorage.setItem('token',token.data);
 
+        let token = JSON.parse(JSON.stringify(data));
+        console.log(token);
+        localStorage.setItem('token',token.data);
+       
         Swal.fire({
           icon: 'success',
           title: 'Bienvenido'
@@ -42,11 +47,12 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(["listar"]);
       }, error=>{
-        console.log(error);
+
         Swal.fire({
           icon: 'error',
           title: 'Error '
         })
+        
       }
       )
     }
