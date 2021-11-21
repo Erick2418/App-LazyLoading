@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
+import { Route, Router, Routes } from '@angular/router';
 import { Cliente } from '../../Interface/Cliente';
 import { ClientesService } from '../../Services/clientes.service';
  
@@ -13,7 +13,7 @@ export class ListadoComponent implements OnInit {
   public clientes:Cliente[]=[];
   public page:number=0;
   public search:string="";
-  constructor(private service:ClientesService) { }
+  constructor(private service:ClientesService,public router:Router ) { }
 
   ngOnInit(): void {
     this.service.getClientes()

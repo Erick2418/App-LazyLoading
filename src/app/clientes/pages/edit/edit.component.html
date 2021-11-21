@@ -1,1 +1,131 @@
-<p>edit works!</p>
+<div class="container mt-4" style="max-width: 675px ">
+
+    <form [formGroup]="form"  (ngSubmit)="save($event)">
+
+        <!-- ********* INPUT Cedula ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Cedula:</label>
+            <div class="col-sm-10" >
+                <input style="max-width: 250px;" type="text" formControlName="cedula" class="form-control">
+                <span *ngIf=" this.form.get('cedula')?.errors && this.form.get('cedula')?.touched"  class="badge bg-danger">
+                    <div *ngIf="this.form.get('cedula')?.hasError('required')">
+                        Debe ingresar un valor
+                   </div>
+                    <div *ngIf="this.form.get('cedula')?.hasError('maxlength') || this.form.get('cedula')?.hasError('minlength')  ">
+                         Debe ingresar un numero valido   
+                    </div>
+                </span>
+            </div>
+
+        </div>
+
+        <!-- ********* INPUT Correo ********** -->
+        <div class="mb-3 row" style="display: none;">
+            <label  class="col-sm-2 col-form-label">Correo:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="email" formControlName="correo" class="form-control" >
+                <span *ngIf=" this.form.get('correo')?.errors && this.form.get('correo')?.touched"  class="badge bg-danger">
+                        Debe ingresar un valor valido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT PASSWORD ********** -->
+        <div class="mb-3 row" style="display: none;">
+            <label  class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-10">
+                <input  style="max-width: 250px;" type="password" formControlName="password" class="form-control" >
+                <span *ngIf=" this.form.get('password')?.errors && this.form.get('password')?.touched"  class="badge bg-danger">
+                    <div *ngIf="this.form.get('password')?.hasError('required')">
+                        Debe ingresar un valor
+                   </div>
+                   <div *ngIf="this.form.get('password')?.hasError('maxlength') || this.form.get('password')?.hasError('minlength')  ">
+                   Debe ingresar minimo 5 caracteres 
+                    </div>
+                    
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Pais ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Pais:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="pais" class="form-control">
+                <span *ngIf=" this.form.get('pais')?.errors && this.form.get('pais')?.touched"  class="badge bg-danger">
+                    El campo es requerido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Nombre ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Nombre:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="nombre" class="form-control">
+                <span *ngIf=" this.form.get('nombre')?.errors && this.form.get('nombre')?.touched"  class="badge bg-danger">
+                    El campo es requerido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Apellidos ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Apellidos:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="apellidos" class="form-control">
+                <span *ngIf=" this.form.get('apellidos')?.errors && this.form.get('apellidos')?.touched"  class="badge bg-danger">
+                    El campo es requerido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Direccion ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Direccion:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="direccion" class="form-control">
+                <span *ngIf=" this.form.get('direccion')?.errors && this.form.get('direccion')?.touched"  class="badge bg-danger">
+                   El campo es requerido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Telefono ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Telefono:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="telefono" class="form-control">
+                <span *ngIf=" this.form.get('telefono')?.errors && this.form.get('telefono')?.touched"  class="badge bg-danger">
+                    El campo es requerido
+                </span>
+            </div>
+        </div>
+
+        <!-- ********* INPUT Obserbaciones ********** -->
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Obserbaciones:</label>
+            <div class="col-sm-10">
+                <input style="max-width: 250px;" type="text" formControlName="obserbaciones" class="form-control">
+                <span *ngIf=" this.form.get('obserbaciones')?.errors && this.form.get('obserbaciones')?.touched"  class="badge bg-danger">
+                    El campo es requerido
+                </span>
+            </div>
+        </div>
+        <br>
+        <!-- ********* INPUT STATUS ********** -->
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked formControlName="status">
+            <label class="form-check-label" >Status</label>
+          </div>
+        <br>
+
+
+
+
+        <!-- ********* BTN SUBMIT ********** -->
+        <button type="submit" [disabled]="form.invalid " class="btn btn-primary">Guardar</button> 
+    </form>
+
+
+</div>

@@ -45,7 +45,7 @@ export class AgregarComponent implements OnInit {
       let cliente:Cliente = this.form.value;
        this.service.addCliente(cliente).subscribe(data=>{
         
-         console.log(JSON.stringify(data));
+        //  console.log(JSON.stringify(data));
          Swal.fire({
           icon: 'success',
           title: 'Registro con exito'

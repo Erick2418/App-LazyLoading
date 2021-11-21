@@ -27,23 +27,31 @@
     <table class="table table-hover">
         <thead>
           <tr>
+            <th [ngStyle]="{ 'width': '25px' } " scope="col">ID</th>
             <th [ngStyle]="{ 'width': '50px' } " scope="col">Nombre</th>
-            <th [ngStyle]="{ 'width': '50px' } " scope="col">Correo</th>
+            <th [ngStyle]="{ 'width': '50px' } " scope="col">Apellido</th>
             <th [ngStyle]="{ 'width': '50px' } " scope="col">Pais</th>
             <th [ngStyle]="{ 'width': '550px' } " scope="col">Acciones</th>
             
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of clientes | filtro:page:search">
+          <tr *ngIf="(clientes.length === 0) ">
+            <td></td>
+            <td>No hay clientes registrados</td>
+          </tr>
+          <tr *ngFor="let cliente of clientes| filtro:page:search;">
             
+            <td>{{ cliente.id }}</td>
             <td>{{ cliente.nombre }}</td>
-            <td>{{ cliente.correo }}</td>
+            <td>{{ cliente.apellidos }}</td>
             <td>{{ cliente.pais }}</td>
             <td>
-              <button class="btn btn-primary">
-                Edit
-              </button>
+ 
+            <a class="btn btn-primary"
+              [routerLink]="['/clientes/edit',cliente.id]" >
+              Edit
+            </a>
               &nbsp;
               <button class="btn btn-danger">
                 Delete
@@ -56,3 +64,4 @@
         </tbody>
       </table>
 </div>
+<br>

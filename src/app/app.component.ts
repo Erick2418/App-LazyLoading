@@ -26,15 +26,12 @@ export class AppComponent {
   }
   login(){
     
-    if(localStorage.getItem('token')){
-      Swal.fire({
-        icon: 'success',
-        title: 'Ya existe una session'
-      })
-      this.router.navigate(["clientes/listado"]);
-      return ;
-    }
+    // if(localStorage.getItem('token')){
+   
+    //   this.router.navigate(["clientes/listado"]);
+    //   return ;
+    // }
     this.router.navigate(["/auth/login"]);
-    return;
+    // return;
   }
 }
