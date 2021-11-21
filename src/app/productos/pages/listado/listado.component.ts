@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 import { IProducts } from '../../interface/IProduct';
 
 @Component({
@@ -22,7 +23,6 @@ export class ListadoComponent implements OnInit {
     ]
     
    }
-
   ngOnInit(): void {
   }
 

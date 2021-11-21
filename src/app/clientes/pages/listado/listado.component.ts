@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
+import { AuthService } from 'src/app/auth/Services/auth.service';
 import { Cliente } from '../../Interface/Cliente';
 import { ClientesService } from '../../Services/clientes.service';
  
@@ -13,7 +14,7 @@ export class ListadoComponent implements OnInit {
   public clientes:Cliente[]=[];
   public page:number=0;
   public search:string="";
-  constructor(private service:ClientesService,public router:Router ) { }
+  constructor(private service:ClientesService,public router:Router,private autservicio: AuthService ) { }
 
   ngOnInit(): void {
     this.service.getClientes()
@@ -21,6 +22,11 @@ export class ListadoComponent implements OnInit {
         this.clientes=data;
         
     })
+    this.autservicio.nombreuser$.subscribe(
+      data=>{
+        console.log("LISTADO: "+data);
+      }
+    )
   }
 
   nextPage(){

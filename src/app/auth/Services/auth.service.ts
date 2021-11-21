@@ -9,6 +9,8 @@ import { Cliente } from 'src/app/clientes/Interface/Cliente';
 })
 export class AuthService {
 
+  nombreuser$ = new EventEmitter<string>();
+
   constructor(private http:HttpClient) { }
 
   Url= 'http://localhost:8080/api/';

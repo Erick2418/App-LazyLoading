@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +9,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  userName:string="Erick";
-  constructor(private router:Router) { }
-
-  ngOnInit(): void {
-    
+  userName:string="";
+  
+  constructor(private router:Router, private dataservice:DataService) { }
+  ngOnInit() {
+    this.dataservice.nombreUsuario$.subscribe(
+      texto=>{
+        this.userName=texto;
+        console.log(texto);
+      }
+    )
   }
   logout(){
     if(localStorage.getItem('token')){
