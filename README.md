@@ -1,3 +1,22 @@
+##
+https://canyon-bakery-5bc.notion.site/Angular-dd729cf2952f4a22af788f5f744ccb2d
+
+##
+Create app   
+ng new my-app
+ng g m productos --routing
+### crear los componentes dentro del modulo
+ng g c productos/pages/agregar
+ng g c productos/pages/listado
+ng g c productos/pages/producto
+ng g c productos/pages/editar
+### servicios
+ng g s serices/productos
+
+## generar pipes
+ng g pipe clientes/pipes/filtro --skip--tests
+
+
 # Applazyloadform
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
